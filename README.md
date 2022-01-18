@@ -98,7 +98,7 @@ This file is responsible for:
 
 ### Installing
 
-Once you have the package in your preferred directory, navigate to `Find_the_forms` in your terminal and run the following commands.
+Once you have the package in your preferred directory, navigate to `Find_the_forms` in your terminal and run the following commands:
 
 ```
 pipenv install
@@ -107,17 +107,18 @@ pipenv shell
 
 ### Executing program
 
-Once you've got your virtual environment running in the `Find_the_forms` directory, to use the program, you will simply run either `return_json.py` or `download_forms.py` via the command line, along with your input, like this:
+Once you've got your virtual environment running in the `Find_the_forms` directory, to use the program you will simply run either `return_json.py` or `download_forms.py` via the command line, along with your input, like this:
 
-`python3 return_json.py <input>`
+```
+python3 return_json.py <input>
 or
-`python3 download_forms.py <input>`
+python3 download_forms.py <input>
+```
 
-Your <input> should be in the following formats.
+Your input should be in the following formats.
 
-#### For `return_json.py`:
+#### Input format for `return_json.py`:
 
-<input>
 `"Form Number 1", "Form Number 2", "Form Number 3" ...`
 
 or without commas
@@ -130,9 +131,8 @@ For example:
 - Commas are optional.
 - Input is not case-sensitive.
 
-#### For `download_forms.py`:
+#### Input format for `download_forms.py`:
 
-<input>
 `"Form Number" minumum_year maximum_year`
 
 For example:
