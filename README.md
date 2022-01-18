@@ -163,7 +163,7 @@ You can run `download_forms.py` in the console with an IRS form name, a maximum 
 
 If you find that your requests are not returning the results you are anticipating:
 
-- Double-check that your input formatting is as described above. Do not use any special characters such as "[]" or "{}" or "-" unless they are part of the form name.
+- Double-check that your input formatting is as described above. Do not use any special characters such as "[]" or "{}" or "-" unless they are part of the form name. Make sure each of your form names are in quotations.
 - Double-check your spelling and make sure that you have typed the complete form name exactly as it is listed on the IRS site. For instance "Form W-2" will work, while "W-2" will not.
 - If you are unsure if you have the right form name, you can visit https://apps.irs.gov/app/picklist/list/priorFormPublication.html and perform a search there to find the exact version and name of the form you wish to request.
 - You can also use that site to make sure that the years you are expecting to receive for a particular form are in fact included on the site. Not all years are always represented within a certain date range. For example, for the form "Publ 1," the years 1998 and 2000 exist, but 1999 does not.
