@@ -59,6 +59,7 @@ For example:
 
 - Form names must be in quotations.
 - Both minimum year and maximum year need to be four-digit integers.
+- The range of years is inclusive (ex. "1999 2001" should fetch three results).
 - The form name and each year should be separated by a space.
 - Commas are optional.
 - Input is not case-sensitive.
