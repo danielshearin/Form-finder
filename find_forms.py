@@ -7,13 +7,19 @@ import math
 
 
 class FindForms:
-
+    """
+    A class to find forms 
+    """
     def __init__(self, form_request: str):
         self.form_request = form_request
 
     def request_html(self, index_of_first_row: int, form_request: str) -> BeautifulSoup:
         """
         Makes initial HTML request to webpage and retrieves data.
+        
+            Parameters:
+                index_of_first_row (int): Index starting at "0" and moving in increments of 200 to help with pagination.
+                form_request (str):
         """
 
         html_text = requests.get(

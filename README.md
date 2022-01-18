@@ -9,40 +9,39 @@ Second, with `download_forms.py` you can specify a tax form name and a list of y
 ## Description
 
 This project is built with Python 3.9.5 and uses three python modules:
-    * return_json.py
-    * download_forms.py
-    * find_forms.py
+* return_json.py
+* download_forms.py
+* find_forms.py
 
 `find_forms.py` will be run by either `return_json.py` or `download_forms.py`. 
 This file is responsible for:
-    * Getting the IRS wepbage
-    * Performing a search
-    * Requesting HTML
-    * Retrieving a number of results
-    * Scraping all pages of search results (paginating when there are multiple pages)
-    * Parsing the search results
-    * Returning a nested list of items:
-        * * each item in the list will have the following information for each form requested:
-            * * form number
-            * * form title
-            * * year
-            * * download url
-            * * name to be used for downloaded file 
+* Getting the IRS wepbage
+* Performing a search
+* Requesting HTML
+* Retrieving a number of results
+* Scraping all pages of search results (paginating when there are multiple pages)
+* Parsing the search results
+* Returning a nested list of items:
+    * * each item in the list will have the following information for each form requested:
+        * * form number
+        * * form title
+        * * year
+        * * download url
+        * * name to be used for downloaded file 
             
             
 You, the user, can run "return_json.py" with a list of IRS form names and you will receive information about each form.
 
 This file is responsible for:
-    * Receiving user input via the command line
-    * Handling errors resulting from bad user input
-    * Calling and running "find_forms.py" to receive data based on user input.
-    * From that data, finding the minimum year and the maximum year for the requested form.
-    * Alerting the user if no results were found. 
-        * * In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (in case of user error).
-    * Formatting each successful data set to json and adding that to a final list of results.
-    * Printing the results to the console in the following format:
+* Receiving user input via the command line
+* Handling errors resulting from bad user input
+* Calling and running "find_forms.py" to receive data based on user input.
+* From that data, finding the minimum year and the maximum year for the requested form.
+* Alerting the user if no results were found. 
+    * * In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (in case of user error).
+* Formatting each successful data set to json and adding that to a final list of results.
+* Printing the results to the console in the following format:
     
-    ```
             [
                     {
                         "form_number": "Form Number",
@@ -52,22 +51,21 @@ This file is responsible for:
                     },
                     ... 
             ]
-    ```
 
 
 You, the user, can run `download_forms.py` with a IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
 
 This file is responsible for:
-    * Receiving user input via the command line
-    * Handling errors resulting from bad user input
-    * Calling and running "find_forms.py" to receive data based on user input.
-    * Filtering results based on minimum and maximum years.
-    * Alerting the user if no results were found. 
-        * * In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (to help with user error).
-    * Creating a directory with the name of the form that was requested
-    * Downloading all PDFs of the requested form within the requested date range.
-        * * PDF files will be named with this format: "Form Name - Year"
-        * * Downloaded to the directory with the cooresponding form name.
+* Receiving user input via the command line
+* Handling errors resulting from bad user input
+* Calling and running "find_forms.py" to receive data based on user input.
+* Filtering results based on minimum and maximum years.
+* Alerting the user if no results were found. 
+    * * In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (to help with user error).
+* Creating a directory with the name of the form that was requested
+* Downloading all PDFs of the requested form within the requested date range.
+    * * PDF files will be named with this format: "Form Name - Year"
+    * * Downloaded to the directory with the cooresponding form name.
 
 
 
@@ -98,39 +96,36 @@ Find_the_forms
 
 To run the program, you will run either `return_json.py` or `download_forms.py` via the command line.
 
-$ python3 return_json.py <input>
-
+`$ python3 return_json.py <input>`
 or
-
-$ python3 download_forms.py <input>
+`$ python3 download_forms.py <input>`
 
 Your input should be in the following formats.
 
+For `return_json.py`:
 
-For return_json.py:
-
-"Form Number 1", "Form Number 2", "Form Number 3" ...
+`"Form Number 1", "Form Number 2", "Form Number 3" ...`
 or
-"Form Number 1" "Form Number 2" "Form Number 3" ...
+`"Form Number 1" "Form Number 2" "Form Number 3" ...`
 
 For example:
-python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"
+`python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
 
 Form numbers must be in quotations and separated by a space.
 Commas are optional.
 Input is not case-sensitive.
 
 
-For download_forms.py:
+For `download_forms.py`:
 
-"Form Number" minumum_year maximum_year
+`"Form Number" minumum_year maximum_year`
 
 For example:
-"Form W-2" 1999 2004
+`"Form W-2" 1999 2004`
 
 If you would only like to download one year, enter that year as both minimum and maximum values.
 For example:
-"Form W-2" 1999 1999
+`"Form W-2" 1999 1999`
 
 Form numbers must be in quotations.
 Both minimum year and maximum year need to be four-digit integers.
@@ -138,10 +133,6 @@ The form name and the two years should each be separated by a space.
 Commas are optional.
 Input is not case-sensitive.
 
-
-```
-code blocks for commands
-```
 
 ## Help
 

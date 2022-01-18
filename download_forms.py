@@ -11,13 +11,23 @@ def click_link(form_name: str, download_name: str, r: Response):
     """
     Opens download link on website and downloads PDF to cooresponding folder.
     
-    Parameters:
-        form_name (str): The 
+        Parameters:
+            form_name (str): The form name to be downloaded
+            download_name: The name that the downloaded file will be called.
+            r: The server's response to our open request.
     """
     with open(f'{form_name}/{download_name}.pdf', 'wb') as f:
         f.write(r.content)
 
 def download_forms(form_request: str, min_year: int, max_year: int):
+    """
+    Gets forms from server, filters them based on parameters, and downloads them.
+    
+        Parameters:
+            form_request (str): The name of the form requested by the user.
+            min_year (int): The minimum year requested by the user.
+            max_year (int): The maximum year requested by the user.
+    """
     count = 0
     get_forms = FindForms(form_request)
     results = get_forms.get_forms()
