@@ -6,19 +6,19 @@ import sys
 
 
 def error_message_download_forms():
-    """ Prints error message for download_forms.py """
+    """ Function to print error message for download_forms.py """
 
-    print('\nPlease re-run "download_forms.py" and enter your request in the follwing format: \n"Form Name" minumum_year maximum_year\n\nFor example:\n"Form W-2" 1999 2004\n\nOr for only one year, enter the same year as both minimum and maximum values.\nFor example:\n"Form W-2" 1999 1999\n\n** Do not forget to use quotations around the form name, and that both minimum year and maximum year need to be four-digit integers.\nThe three arguments should each be separated by a space.\nCommas are optional and input is not case-sensitive.\n\nStill not getting what you want? You can search here to make sure you are using the form name exactly as it is listed on the site:\nhttps://apps.irs.gov/app/picklist/list/priorFormPublication.html')
+    print('\nPlease re-run "download_forms.py" and enter your request in the follwing format: \n"Form Name" minumum_year maximum_year\n\nFor example:\n"Form W-2" 1999 2004\n\nIf you would only like to download one year, enter that year as both the minimum and maximum values.\nFor example:\n"Form W-2" 1999 1999\n\n** Do not forget to use quotations around the form name, and that both minimum year and maximum year need to be four-digit integers.\nThe three arguments should each be separated by a space.\nCommas are optional and input is not case-sensitive.\n\nStill not getting what you want? You can search here to make sure you are using the form name exactly as it is listed on the site:\nhttps://apps.irs.gov/app/picklist/list/priorFormPublication.html')
 
 
 def click_link(form_name: str, download_name: str, r: Response):
     """
-    Opens download link on website and downloads PDF to corresponding folder.
+    Function to open download link on website and download PDF to corresponding folder.
 
-        Parameters:
-            form_name (str): The form name to be downloaded
-            download_name: The name that the downloaded file will be called.
-            r: The server's response to our "open" request.
+    Parameters:
+        form_name (str): The name of the form to be downloaded.
+        download_name (str): What the downloaded file will be named.
+        r (request.models.Reponse): The server's response to our "open" request.
     """
     with open(f'{form_name}/{download_name}.pdf', 'wb') as f:
         f.write(r.content)
@@ -26,25 +26,24 @@ def click_link(form_name: str, download_name: str, r: Response):
 
 def download_forms(form_request: str, min_year: int, max_year: int):
     """
-    Gets forms from server, filters them based on parameters, and downloads them.
+    Function to get forms from server, filter them based on parameters, and download them.
 
-        Parameters:
-            form_request (str): The name of the form requested by the user.
-            min_year (int): The minimum year requested by the user.
-            max_year (int): The maximum year requested by the user.
+    Parameters:
+        form_request (str): The name of the form requested by the user.
+        min_year (int): The minimum year requested by the user.
+        max_year (int): The maximum year requested by the user.
     """
     count = 0
     get_forms = FindForms(form_request)
     results = get_forms.get_forms()
 
-    # Filtering results and downloading forms
+    # Filter results, create directory and download forms
     for result in results:
         form_name = (result["form_name"])
         year = int(result["year"])
         download_url = result["download_url"]
         download_file_name = result["download_file_name"]
 
-        # Create directory and download forms
         if year >= min_year and year <= max_year:
             count += 1
             r = requests.get(download_url, allow_redirects=True)
@@ -71,7 +70,7 @@ if __name__ == '__main__':
         # Check for correct number of arguments
         if len(sys.argv) == 4:
 
-            # Populate paramters and remove unnecessary commas
+            # Define paramters and remove unnecessary commas
             form_request = sys.argv[1].replace(",", "")
             min_year = sys.argv[2].replace(",", "")
             max_year = sys.argv[3].replace(",", "")

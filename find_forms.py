@@ -8,7 +8,7 @@ import math
 
 class FindForms:
     """
-    A class that searches the external site and return results based on the user's request.
+    A class that searches the external server and return results based on the user's request.
 
     Attributes:
         form_request (str): The set of data requested by the user.
@@ -25,14 +25,14 @@ class FindForms:
 
     def request_html(self, index_of_first_row: int, form_request: str) -> BeautifulSoup:
         """
-        Function to make HTML request to webpage and retrieve data.
+        Function to make HTML request to server and retrieve data.
 
         Parameters:
             index_of_first_row (int): Index starting at "0" and moving in increments of 200 to help with pagination.
             form_request (str): The set of data requested by the user.
 
         Returns:
-            soup (BeautifulSoup): Data extracted from external site.
+            soup (BeautifulSoup): Data extracted from external server.
         """
 
         html_text = requests.get(
@@ -42,7 +42,7 @@ class FindForms:
 
     def get_forms(self) -> List[Dict]:
         """
-        Function to retrieve data from external site. Responsible for pagination, parsing search results.
+        Function to retrieve data from external server. Responsible for pagination and parsing search results.
 
         Returns:
             results (List[Dict]): A list of each search item grouped with its data.
@@ -52,11 +52,14 @@ class FindForms:
 
         # Pagination
         try:
+            # Find number of pages
             result_number_str = soup.find(
-                'th', class_="ShowByColumn").text.strip()[-12:-5].replace(',', '')
+                'th', class_="ShowByColumn").text.strip()
+            result_number_str = result_number_str[-12:-5].replace(',', '')
             result_num = int(re.findall('[0-9]+', result_number_str)[0])
             num_of_pages = math.ceil(result_num / 200)
 
+            # Extract search results for each page
             for i in range(num_of_pages):
                 index_of_first_row = (i - 1) * 200
                 soup = self.request_html(index_of_first_row, self.form_request)

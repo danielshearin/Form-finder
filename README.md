@@ -72,7 +72,7 @@ For example:
 
 `python3 download_forms.py "Form W-2" 1999 2004`
 
-If you would only like to download one year, enter that year as both minimum and maximum values.
+If you would only like to download one year, enter that year as both the minimum and maximum values.
 For example:
 
 `python3 download_forms.py "Form W-2" 1999 1999`
