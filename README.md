@@ -59,7 +59,7 @@ For example:
 
 #### More on input formatting for `download_forms.py`:
 
-- Form numbers must be in quotations.
+- Form names must be in quotations.
 - Both minimum year and maximum year need to be four-digit integers.
 - The form name and each year should each be separated by a space.
 - Commas are optional.
