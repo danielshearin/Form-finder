@@ -114,7 +114,7 @@ You can run `return_json.py` with a list of requested IRS form names, and for ea
 - Calling and running `find_forms.py` to receive data based on user input.
 - From that data, finding the minimum year and the maximum year for the requested form.
 - Alerting the user if no results were found.
-  - To help with user error, this function also reminds them of the proper formatting for their input.
+  - To help with user error, this function also reminds them of the proper formatting for their input and provides a link to the IRS website for reference.
 - Formatting each successful data set into json and adding that to a final list of results.
 - Printing the results as JSON to the console in the following format:
 
@@ -142,7 +142,7 @@ You can run `download_forms.py` in the console with an IRS form name, a maximum 
 - Calling and running `find_forms.py` to receive data based on user input.
 - Filtering results based on the requested minimum and maximum years.
 - Alerting the user if no results were found.
-  - To help with user error, this function also reminds them of the proper formatting for their input.
+  - To help with user error, this function also reminds them of the proper formatting for their input and provides a link to the IRS website for reference.
 - Creating a directory with the name of the form that was requested.
 - Downloading all PDFs of the requested form within the requested date range.
   - PDF files will be named with this format: "Form Name - Year"
