@@ -154,7 +154,7 @@ You can run `download_forms.py` in the console with an IRS form name, a maximum 
 
 If you find that your requests are not returning the results you are anticipating:
 
-- Double-check that your input formatting is as described above. Do not use any special characters such as "[]" or "{}" unless they are part of the form name.
+- Double-check that your input formatting is as described above. Do not use any special characters such as "[]" or "{}" or "-" unless they are part of the form name.
 - Double-check your spelling and make sure that you have typed the complete form name exactly as it is listed on the IRS site. For instance "Form W-2" will work, while "W-2" will not.
 - If you are unsure, you can visit https://apps.irs.gov/app/picklist/list/priorFormPublication.html and perform a search there to find the exact version and name of the form you wish to request.
 
