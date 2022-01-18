@@ -104,7 +104,7 @@ It is responsible for:
 
 ### `return_json.py`
 
-You can run `return_json.py` with a list of requested IRS form names, and for each form name in the list, you will receive the form number, the form title, and the minimum and maximum years that the form is available for download, printed as JSON to the console.
+You can run `return_json.py` with a list of requested IRS form names, and for each form name in the list, you will receive the form number, the form title, and the minimum and maximum years that the form is available for download. These results will be printed as JSON to the console.
 (Find more info on input-formatting in the "How to Run the Files" section above)
 
 `return_json.py` is responsible for:
