@@ -6,88 +6,6 @@ First, with `return_json.py`, you, the user, can provide a list of IRS form name
 
 Second, with `download_forms.py` you can specify a tax form and a range of years, and you will receive downloads for all the PDFs of that form available within that date range. These files will be downloaded into a subdirectory titled with the name of the form.
 
-## Description
-
-This project uses three python files:
-
-- `return_json.py`
-- `download_forms.py`
-- `find_forms.py`
-
-### `find_forms.py`
-
-`find_forms.py` is a module that will be run internally by either `return_json.py` or `download_forms.py`.
-It is responsible for:
-
-- Hitting the IRS webpage
-- Performing a search on the page
-- Requesting HTML
-- Retrieving the number of results
-- Scraping search results (multiple pages when there is pagination involved)
-- Parsing the search results
-- Returning a nested list of items. Each item will be a single version of every form requested (one item per year) and will have the following information:
-  - form number (form name)
-  - form title
-  - year
-  - download url
-  - name to be used for downloaded PDF file
-
-### `return_json.py`
-
-You can run `return_json.py` with a list of IRS form names and you will receive information about each form.
-
-For example:
-
-`python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
-
-(more info on input-formatting in the "How to Run the Files" section below)
-
-This file is responsible for:
-
-- Receiving user input via the command line
-- Handling errors resulting from bad user input
-- Calling and running "find_forms.py" to receive data based on user input.
-- From that data, finding the minimum year and the maximum year for the requested form.
-- Alerting the user if no results were found.
-  - In case the user believes they should have received results, this function also reminds them of the proper formatting for their input (to help with user error).
-- Formatting each successful data set into json and adding that to a final list of results.
-- Printing the results as JSON to the console in the following format:
-
-```
-[
-    {
-        "form_number": "Form Number",
-        "form_title": "Form Title",
-        "min_year": ####,
-        "max_year": ####
-    },
-    ...
-]
-```
-
-### `download_forms.py`
-
-You can run `download_forms.py` with an IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
-
-For example:
-
-`python3 download_forms.py "Form W-2" 1999 2004`
-
-(more info on input-formatting in the "How to Run the Files" section below)
-
-This file is responsible for:
-
-- Receiving user input via the command line
-- Handling errors resulting from bad user input
-- Calling and running "find_forms.py" to receive data based on user input.
-- Filtering results based on the requested minimum and maximum years.
-- Alerting the user if no results were found.
-  - In case the user believes they should have received results, this function also reminds them of the proper formatting for their input (to help with user error).
-- Creating a directory with the name of the form that was requested
-- Downloading all PDFs of the requested form within the requested date range.
-  - PDF files will be named with this format: "Form Name - Year"
-  - They will be downloaded to the directory of the corresponding form name.
-
 ## Getting Started
 
 ### Dependencies
@@ -159,6 +77,89 @@ If you would only like to download one year, enter that year as both minimum and
 For example:
 
 `python3 download_forms.py "Form W-2" 1999 1999`
+
+## More Detailed Description
+
+This project uses three python files:
+
+- `return_json.py`
+- `download_forms.py`
+- `find_forms.py`
+
+### `find_forms.py`
+
+`find_forms.py` is a module that will be run internally by either `return_json.py` or `download_forms.py`.
+It is responsible for:
+
+- Hitting the IRS webpage
+- Performing a search on the page
+- Requesting HTML
+- Retrieving the number of results
+- Scraping search results (multiple pages when there is pagination involved)
+- Parsing the search results
+- Returning a nested list of items. Each item will be a single version of every form requested (one item per year) and will have the following information:
+  - form number (form name)
+  - form title
+  - year
+  - download url
+  - name to be used for downloaded PDF file
+
+### `return_json.py`
+
+You can run `return_json.py` with a list of IRS form names and you will receive information about each form.
+
+For example:
+
+`python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
+
+(more info on input-formatting in the "How to Run the Files" section above)
+
+This file is responsible for:
+
+- Receiving user input via the command line
+- Handling errors resulting from bad user input
+- Calling and running "find_forms.py" to receive data based on user input.
+- From that data, finding the minimum year and the maximum year for the requested form.
+- Alerting the user if no results were found.
+  - In case the user believes they should have received results, this function also reminds them of the proper formatting for their input (to help with user error).
+- Formatting each successful data set into json and adding that to a final list of results.
+- Printing the results as JSON to the console in the following format:
+
+```
+[
+    {
+        "form_number": "Form Number",
+        "form_title": "Form Title",
+        "min_year": ####,
+        "max_year": ####
+    },
+    ...
+]
+```
+
+### `download_forms.py`
+
+You can run `download_forms.py` with an IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
+
+For example:
+
+`python3 download_forms.py "Form W-2" 1999 2004`
+
+(more info on input-formatting in the "How to Run the Files" section above)
+
+This file is responsible for:
+
+- Receiving user input via the command line
+- Handling errors resulting from bad user input
+- Calling and running "find_forms.py" to receive data based on user input.
+- Filtering results based on the requested minimum and maximum years.
+- Alerting the user if no results were found.
+  - In case the user believes they should have received results, this function also reminds them of the proper formatting for their input (to help with user error).
+- Creating a directory with the name of the form that was requested
+- Downloading all PDFs of the requested form within the requested date range.
+  - PDF files will be named with this format: "Form Name - Year"
+  - They will be downloaded to the directory of the corresponding form name.
+
 
 ## Help
 
