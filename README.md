@@ -80,7 +80,7 @@ This file is responsible for:
 - Creating a directory with the name of the form that was requested
 - Downloading all PDFs of the requested form within the requested date range.
   - PDF files will be named with this format: "Form Name - Year"
-  - They will be downloaded to the directory of the cooresponding form name.
+  - They will be downloaded to the directory of the corresponding form name.
 
 ## Getting Started
 

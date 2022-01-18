@@ -13,7 +13,7 @@ def error_message_download_forms():
 
 def click_link(form_name: str, download_name: str, r: Response):
     """
-    Opens download link on website and downloads PDF to cooresponding folder.
+    Opens download link on website and downloads PDF to corresponding folder.
 
         Parameters:
             form_name (str): The form name to be downloaded
