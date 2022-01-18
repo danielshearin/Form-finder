@@ -8,7 +8,7 @@ import sys
 def error_message_download_forms():
     """ Prints error message for download_forms.py """
 
-    print('\nPlease re-run "download_forms.py" and enter your request in the follwing format: \n"Form Number" minumum_year maximum_year\n\nFor example:\n"Form W-2" 1999 2004\n\nOr for only one year, enter the same year as both minimum and maximum values.\nFor example:\n"Form W-2" 1999 1999\n\n** Do not forget to use quotations around the form number, and that both minimum year and maximum year need to be four-digit integers.\nThe three arguments should each be separated by a space.\nCommas are optional and input is not case-sensitive.')
+    print('\nPlease re-run "download_forms.py" and enter your request in the follwing format: \n"Form Number" minumum_year maximum_year\n\nFor example:\n"Form W-2" 1999 2004\n\nOr for only one year, enter the same year as both minimum and maximum values.\nFor example:\n"Form W-2" 1999 1999\n\n** Do not forget to use quotations around the form number, and that both minimum year and maximum year need to be four-digit integers.\nThe three arguments should each be separated by a space.\nCommas are optional and input is not case-sensitive.\n\nStill not getting what you want? You can search here to make sure you are using the form name exactly as it is listed on the site:\nhttps://apps.irs.gov/app/picklist/list/priorFormPublication.html')
 
 
 def click_link(form_name: str, download_name: str, r: Response):

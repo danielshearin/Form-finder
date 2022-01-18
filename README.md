@@ -2,9 +2,9 @@
 
 This project achieves two main purposes.
 
-First, with `return_json.py`, you can input a list of IRS form names and receive information about that form. Specifically, they wil receive the form number, the form title, and the minimum and maximum years that the form is available for download. This information will be returned as json.
+First, with `return_json.py`, you, the user, can provide a list of IRS form names and receive a package information about each form in the list. Specifically, you will receive the form number (or form name), the form title, and the minimum and maximum years that the form is available for download. This information will be returned to you as json.
 
-Second, with `download_forms.py` you can specify a tax form name and a list of years, and receive downloads for all PDFs of that name within that date range. These files will be downloaded into a subdirectory titled with the name of the form.
+Second, with `download_forms.py` you can specify a tax form and a range of years, and you will receive downloads for all the PDFs of that form available within that date range. These files will be downloaded into a subdirectory titled with the name of the form.
 
 ## Description
 
@@ -16,22 +16,21 @@ This project is built with Python 3.9.5 and uses three python modules:
 
 ### `find_forms.py`
 
-`find_forms.py` will be run by either `return_json.py` or `download_forms.py`.
-This file is responsible for:
+`find_forms.py` will be run internally by either `return_json.py` or `download_forms.py`.
+It is responsible for:
 
-- Hitting the IRS wepbage
-- Performing a search
-- Requesting HTML
+- Hitting the necessary IRS webpage
+- Performing a search on that page
+- Requesting HTML from the page
 - Retrieving a number of results
-- Scraping all pages of search results (paginating when there are multiple pages)
+- Scraping all pages of search results (multiple pages when there is pagination involved)
 - Parsing the search results
-- Returning a nested list of items:
-  - Each item in the list will have the following information for each form requested:
-    - form number
-    - form title
-    - year
-    - download url
-    - name to be used for downloaded file
+- Returning a nested list of items. Each item in the list will have the following information for each form requested:
+  - form number (form name)
+  - form title
+  - year
+  - download url
+  - name to be used for downloaded file
 
 ### `return_json.py`
 
@@ -44,9 +43,10 @@ This file is responsible for:
 - Calling and running "find_forms.py" to receive data based on user input.
 - From that data, finding the minimum year and the maximum year for the requested form.
 - Alerting the user if no results were found.
-  - In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (in case of user error).
+  - In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (to help with user error).
 - Formatting each successful data set to json and adding that to a final list of results.
 - Printing the results to the console in the following format:
+
 ```
 [
     {
@@ -61,20 +61,20 @@ This file is responsible for:
 
 ### `download_forms.py`
 
-You, the user, can run `download_forms.py` with a IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
+You, the user, can run `download_forms.py` with an IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
 
 This file is responsible for:
 
 - Receiving user input via the command line
 - Handling errors resulting from bad user input
 - Calling and running "find_forms.py" to receive data based on user input.
-- Filtering results based on minimum and maximum years.
+- Filtering results based on the requested minimum and maximum years.
 - Alerting the user if no results were found.
   - In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (to help with user error).
 - Creating a directory with the name of the form that was requested
 - Downloading all PDFs of the requested form within the requested date range.
   - PDF files will be named with this format: "Form Name - Year"
-  - Downloaded to the directory with the cooresponding form name.
+  - They will be downloaded to the directory of the cooresponding form name.
 
 ## Getting Started
 
@@ -92,27 +92,29 @@ This file is responsible for:
 
 ### Installing
 
-Once downloading the package. You can unzip it in your directory of choice. Then run the following commands.
+Once you have the package in your preferred directory, navigate to `Find_the_forms` in your terminal and run the following commands.
 
-Find_the_forms
-
-- pipenv install
-- pipenv shell
+```
+pipenv install
+pipenv shell
+```
 
 ### Executing program
 
-To run the program, you will run either `return_json.py` or `download_forms.py` via the command line.
+To use the program, you will simply run either `return_json.py` or `download_forms.py` via the command line, like this:
 
-`$ python3 return_json.py <input>`
+`python3 return_json.py <input>`
 or
-`$ python3 download_forms.py <input>`
+`python3 download_forms.py <input>`
 
-Your input should be in the following formats.
+Your <input> should be in the following formats.
 
-For `return_json.py`:
+#### For `return_json.py`:
 
+<input>
 `"Form Number 1", "Form Number 2", "Form Number 3" ...`
-or
+
+or without commas
 `"Form Number 1" "Form Number 2" "Form Number 3" ...`
 
 For example:
@@ -122,8 +124,9 @@ For example:
 - Commas are optional.
 - Input is not case-sensitive.
 
-For `download_forms.py`:
+#### For `download_forms.py`:
 
+<input>
 `"Form Number" minumum_year maximum_year`
 
 For example:
@@ -141,4 +144,10 @@ For example:
 
 ## Help
 
-Any advise for common problems or issues.
+If you find that your requests are not returning the results you are anticipating:
+- Double-check that your input formatting is as described above.
+- Double-check your spelling and that you have the complete form name exactly as it is listed on the IRS site.
+- If you are unsure, you can visit https://apps.irs.gov/app/picklist/list/priorFormPublication.html and perform a search there to find the exact version of the form you wish to request.
+
+
+Thank you, hope you enjoy -- Daniel
