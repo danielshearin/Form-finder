@@ -3,16 +3,17 @@ from typing import List
 from find_forms import FindForms
 import sys
 
-# test_form_list_to_copy = 'form w-2', 'form 1095-c', 'publ 1', 'Form 990 (Schedule K)', 'Publ 1 (SP)' 'form wrong'
-# test_form_list2_to_copy = 'form w-2' 'form 1095-c' 'publ 1' 'Form 990 (Schedule K)' 'Publ 1 (SP)'
 
 def error_message_json():
+    """ Prints error message for return_json.py """
+
     print('\nPlease re-run "return_json.py" and enter your request in one of the follwing formats:\n\n"Form Number 1", "Form Number 2", "Form Number 3" ...\nor\n"Form Number 1" "Form Number 2" "Form Number 3" ...\n\nFor example:\n"Form W-2", "Publ 1", "Form 990 (Schedule K)"\n\n** Do not forget form numbers should be in quotations and separated by a space.\nCommas are optional and input is not case-sensitive.')
+
 
 def return_json(form_list: List[str]):
     json_results = []
     no_results = []
-    
+
     for form_request in form_list:
         form_request = form_request.replace(",", "")
         get_forms = FindForms(form_request)
@@ -43,13 +44,15 @@ def return_json(form_list: List[str]):
             })
 
     final_json = (json.dumps(json_results, indent=4))
-    if len(final_json) > 2 : print(final_json)
-    
+    if len(final_json) > 2:
+        print(final_json)
+
     if len(no_results) != 0:
         print("\nNo results found for the following:")
-        print(*no_results, sep = ", ")
+        print(*no_results, sep=", ")
         print("\nIf you think this is incorrect:")
         error_message_json()
+
 
 if __name__ == '__main__':
     input_list = sys.argv[1:]

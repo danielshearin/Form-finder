@@ -8,18 +8,31 @@ import math
 
 class FindForms:
     """
-    A class to find forms 
+    A class that searches the external site and return results based on the user's request.
+
+    Attributes:
+        form_request (str): The set of data requested by the user.
     """
+
     def __init__(self, form_request: str):
+        """
+        The constructor for FindForms class.
+
+        Parameters:
+            form_request (str): The set of data requested by the user.
+        """
         self.form_request = form_request
 
     def request_html(self, index_of_first_row: int, form_request: str) -> BeautifulSoup:
         """
-        Makes initial HTML request to webpage and retrieves data.
-        
-            Parameters:
-                index_of_first_row (int): Index starting at "0" and moving in increments of 200 to help with pagination.
-                form_request (str):
+        Function to make HTML request to webpage and retrieve data.
+
+        Parameters:
+            index_of_first_row (int): Index starting at "0" and moving in increments of 200 to help with pagination.
+            form_request (str): The set of data requested by the user.
+
+        Returns:
+            soup (BeautifulSoup): Data extracted from external site.
         """
 
         html_text = requests.get(
@@ -27,20 +40,23 @@ class FindForms:
         soup = BeautifulSoup(html_text, 'lxml')
         return soup
 
-
     def get_forms(self) -> List[Dict]:
         """
-        THIS NEEDS TO BE COMPLETED
+        Function to retrieve data from external site. Responsible for pagination, parsing search results.
+
+        Returns:
+            results (List[Dict]): A list of each search item grouped with its data.
         """
         results = []
         soup = self.request_html(0, self.form_request)
-        
+
         # Pagination
         try:
-            result_number_str = soup.find('th', class_="ShowByColumn").text.strip()[-12:-5].replace(',', '')
+            result_number_str = soup.find(
+                'th', class_="ShowByColumn").text.strip()[-12:-5].replace(',', '')
             result_num = int(re.findall('[0-9]+', result_number_str)[0])
             num_of_pages = math.ceil(result_num / 200)
-            
+
             for i in range(num_of_pages):
                 index_of_first_row = (i - 1) * 200
                 soup = self.request_html(index_of_first_row, self.form_request)
@@ -50,11 +66,14 @@ class FindForms:
 
                 # Parse search results
                 for line in lines:
-                    form_name = line.find('td', class_="LeftCellSpacer").text.strip()
+                    form_name = line.find(
+                        'td', class_="LeftCellSpacer").text.strip()
                     if self.form_request.lower() == form_name.lower():
                         download_url = line.find('a').attrs['href']
-                        form_title = line.find('td', class_="MiddleCellSpacer").text.strip()
-                        year = line.find('td', class_="EndCellSpacer").text.strip()
+                        form_title = line.find(
+                            'td', class_="MiddleCellSpacer").text.strip()
+                        year = line.find(
+                            'td', class_="EndCellSpacer").text.strip()
                         download_file_name = form_name + ' - ' + year
                         results.append({
                             "form_name": form_name,
