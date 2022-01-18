@@ -40,7 +40,7 @@ For example:
 
 `python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
 
-(more info on this in the "Executing program" section below)
+(more info on input-formatting in the "How to Run the Files" section below)
 
 This file is responsible for:
 
@@ -73,7 +73,7 @@ For example:
 
 `python3 download_forms.py "Form W-2" 1999 2004`
 
-(more info on this in the "Executing program" section below)
+(more info on input-formatting in the "How to Run the Files" section below)
 
 This file is responsible for:
 
@@ -104,20 +104,22 @@ This file is responsible for:
 
 ### Installing
 
-Once you have the package in your preferred directory, navigate to `Find_the_forms` in your terminal and run the following commands:
+Once you have the `Find_the_forms` package in your preferred directory, navigate to `Find_the_forms` in your terminal and run the following commands:
 
 ```
 pipenv install
 pipenv shell
 ```
 
-### Executing program -- how to run files
+### How to Run the Files
 
-Once you've got your virtual environment running in the `Find_the_forms` directory, to use the program you will simply run either `return_json.py` or `download_forms.py` via the command line, along with your input, like this:
+Once you've got your virtual environment running in the `Find_the_forms` directory, simply run either `return_json.py` or `download_forms.py` via the command line, along with your input, like this:
 
 ```
 python3 return_json.py <input>
+
 or
+
 python3 download_forms.py <input>
 ```
 
