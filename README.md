@@ -22,15 +22,15 @@ This file is responsible for:
 * Scraping all pages of search results (paginating when there are multiple pages)
 * Parsing the search results
 * Returning a nested list of items:
-    * * each item in the list will have the following information for each form requested:
-        * * form number
-        * * form title
-        * * year
-        * * download url
-        * * name to be used for downloaded file 
+    * each item in the list will have the following information for each form requested:
+        * form number
+        * form title
+        * year
+        * download url
+        * name to be used for downloaded file 
             
             
-You, the user, can run "return_json.py" with a list of IRS form names and you will receive information about each form.
+You, the user, can run `return_json.py` with a list of IRS form names and you will receive information about each form.
 
 This file is responsible for:
 * Receiving user input via the command line
@@ -38,7 +38,7 @@ This file is responsible for:
 * Calling and running "find_forms.py" to receive data based on user input.
 * From that data, finding the minimum year and the maximum year for the requested form.
 * Alerting the user if no results were found. 
-    * * In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (in case of user error).
+    * In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (in case of user error).
 * Formatting each successful data set to json and adding that to a final list of results.
 * Printing the results to the console in the following format:
     
@@ -61,11 +61,11 @@ This file is responsible for:
 * Calling and running "find_forms.py" to receive data based on user input.
 * Filtering results based on minimum and maximum years.
 * Alerting the user if no results were found. 
-    * * In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (to help with user error).
+    *  In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (to help with user error).
 * Creating a directory with the name of the form that was requested
 * Downloading all PDFs of the requested form within the requested date range.
-    * * PDF files will be named with this format: "Form Name - Year"
-    * * Downloaded to the directory with the cooresponding form name.
+    * PDF files will be named with this format: "Form Name - Year"
+    * Downloaded to the directory with the cooresponding form name.
 
 
 
