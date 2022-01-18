@@ -51,10 +51,6 @@ Like this:
 
 `"Form Name 1", "Form Name 2", "Form Name 3" ...`
 
-or without commas:
-
-`"Form Name 1" "Form Name 2" "Form Name 3" ...`
-
 For example:
 
 `python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
