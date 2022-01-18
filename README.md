@@ -26,7 +26,7 @@ This file is responsible for:
 - Scraping all pages of search results (paginating when there are multiple pages)
 - Parsing the search results
 - Returning a nested list of items:
-  - each item in the list will have the following information for each form requested:
+  - Each item in the list will have the following information for each form requested:
     - form number
     - form title
     - year
@@ -47,15 +47,17 @@ This file is responsible for:
   - In case the user believes they should have received results, this function also reminds the user of the proper formatting for their input (in case of user error).
 - Formatting each successful data set to json and adding that to a final list of results.
 - Printing the results to the console in the following format:
-        [
-            {
-                "form_number": "Form Number",
-                "form_title": "Form Title",
-                "min_year": ####,
-                "max_year": ####
-            },
-            ...
-        ]
+```
+[
+    {
+        "form_number": "Form Number",
+        "form_title": "Form Title",
+        "min_year": ####,
+        "max_year": ####
+    },
+    ...
+]
+```
 
 ### `download_forms.py`
 
