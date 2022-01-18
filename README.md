@@ -1,6 +1,6 @@
 # Find the Forms!
 
-Hello and thank you for reading. This is a Python program (written in version 3.9.5) that fulfills two main purposes.
+Hello and thank you for reading! This is a Python program (written in version 3.9.5) that fulfills two main purposes.
 
 First, with `return_json.py`, you, the user, can provide a list of IRS form names and receive a set of information for each form in the list. Specifically, you will receive the form number, the form title, and the minimum and maximum years that the form is available for download. This information will be returned to you printed in the console in JSON format.
 
@@ -39,6 +39,15 @@ python3 return_json.py "Form Name 1", "Form Name 2", "Form Name 3" ...
 or
 
 python3 download_forms.py "Form Name" minumum_year maximum_year
+```
+
+For example:
+```
+python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"
+
+or
+
+python3 download_forms.py "Form W-2" 1999 2004
 ```
 
 #### More on input formatting for `return_json.py`:
