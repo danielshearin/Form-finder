@@ -105,12 +105,12 @@ It is responsible for:
 ### `return_json.py`
 
 You can run `return_json.py` with a list of requested IRS form names, and for each form name in the list, you will receive the form number, the form title, and the minimum and maximum years that the form is available for download. These results will be printed as JSON to the console.
-(Find more info on input-formatting in the "How to Run the Files" section above)
+(Find more info on input-formatting in the "How to Run the Files" section above).
 
 `return_json.py` is responsible for:
 
-- Receiving user input via the command line
-- Handling errors resulting from bad user input
+- Receiving user input via the command line.
+- Handling errors resulting from bad user input.
 - Calling and running `find_forms.py` to receive data based on user input.
 - From that data, finding the minimum year and the maximum year for the requested form.
 - Alerting the user if no results were found.
@@ -133,17 +133,17 @@ You can run `return_json.py` with a list of requested IRS form names, and for ea
 ### `download_forms.py`
 
 You can run `download_forms.py` in the console with an IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range. These PDF files will be named with this format: "Form Name - Year" and will be downloaded to the directory of the corresponding form name.
-(Find more info on input-formatting in the "How to Run the Files" section above)
+(Find more info on input-formatting in the "How to Run the Files" section above).
 
 `download_forms.py` is responsible for:
 
-- Receiving user input via the command line
-- Handling errors resulting from bad user input
+- Receiving user input via the command line.
+- Handling errors resulting from bad user input.
 - Calling and running `find_forms.py` to receive data based on user input.
 - Filtering results based on the requested minimum and maximum years.
 - Alerting the user if no results were found.
   - In case the user believes they should have received results, this function also reminds them of the proper formatting for their input (to help with user error).
-- Creating a directory with the name of the form that was requested
+- Creating a directory with the name of the form that was requested.
 - Downloading all PDFs of the requested form within the requested date range.
   - PDF files will be named with this format: "Form Name - Year"
   - They will be downloaded to the directory of the corresponding form name.
