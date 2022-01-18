@@ -47,6 +47,8 @@ python3 download_forms.py "Form Name" minumum_year maximum_year
 - Commas are optional.
 - Input is not case-sensitive.
 
+Like this:
+
 `"Form Name 1", "Form Name 2", "Form Name 3" ...`
 
 or without commas:
@@ -64,6 +66,8 @@ For example:
 - The form name and each year should each be separated by a space.
 - Commas are optional.
 - Input is not case-sensitive.
+
+Like this:
 
 `"Form Name" minumum_year maximum_year`
 
@@ -126,7 +130,7 @@ This file is responsible for:
 ```
 [
     {
-        "form_number": "Form Number",
+        "form_number": "Form Name",
         "form_title": "Form Title",
         "min_year": ####,
         "max_year": ####
