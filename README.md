@@ -76,7 +76,7 @@ For example:
 
 `python3 download_forms.py "Form W-2" 1999 1999`
 
-## More Detailed Description
+## More Details
 
 This project uses three python files:
 
