@@ -56,7 +56,7 @@ python3 download_forms.py "Form W-2" 1999 2004
 - Commas are optional.
 - Input is not case-sensitive.
 
-Like this:
+Format like this:
 
 `"Form Name 1", "Form Name 2", "Form Name 3" ...`
 
@@ -73,7 +73,7 @@ For example:
 - Commas are optional.
 - Input is not case-sensitive.
 
-Like this:
+Format like this:
 
 `"Form Name" minumum_year maximum_year`
 
