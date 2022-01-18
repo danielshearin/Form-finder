@@ -1,4 +1,5 @@
 from find_forms import FindForms
+from typing import List
 import requests
 from requests.models import Response
 import os
@@ -65,29 +66,39 @@ def download_forms(form_request: str, min_year: int, max_year: int):
         print(f'{count} forms downloaded to "{form_name}" directory.')
 
 
-if __name__ == '__main__':
-    try:
-        # Check for correct number of arguments
-        if len(sys.argv) == 4:
+def check_input_call_download(user_input: List):
+    """
+    Function to check for the proper format of user input, then to catch errors or call a function to download forms.
 
-            # Define paramters and remove unnecessary commas
-            form_request = sys.argv[1].replace(",", "")
-            min_year = sys.argv[2].replace(",", "")
-            max_year = sys.argv[3].replace(",", "")
+    Parameters:
+        user_input (List): The input entered by the user in the command line.
+    """
 
-            # Swap years if out of order
-            if max_year < min_year:
-                max_year, min_year = min_year, max_year
+    # Check for correct number of arguments
+    if len(user_input) == 4:
 
-            # Call main download function and catch bad "year" inputs
-            if len(min_year) == 4 and len(max_year) == 4:
-                download_forms(form_request, int(min_year), int(max_year))
+        # Define paramters and remove unnecessary commas
+        form_request = user_input[1].replace(",", "")
+        min_year = user_input[2].replace(",", "")
+        max_year = user_input[3].replace(",", "")
 
-            else:
-                error_message_download_forms()
+        # Swap years if out of order
+        if max_year < min_year:
+            max_year, min_year = min_year, max_year
+
+        # Call main download function and catch bad "year" inputs
+        if len(min_year) == 4 and len(max_year) == 4:
+            download_forms(form_request, int(min_year), int(max_year))
 
         else:
             error_message_download_forms()
 
+    else:
+        error_message_download_forms()
+
+
+if __name__ == '__main__':
+    try:
+        check_input_call_download(sys.argv)
     except:
         error_message_download_forms()
