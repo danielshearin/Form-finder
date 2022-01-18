@@ -37,7 +37,9 @@ It is responsible for:
 You can run `return_json.py` with a list of IRS form names and you will receive information about each form.
 
 For example:
+
 `python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
+
 (more info on this in the "Executing program" section below)
 
 This file is responsible for:
@@ -68,7 +70,9 @@ This file is responsible for:
 You can run `download_forms.py` with an IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
 
 For example:
+
 `python3 download_forms.py "Form W-2" 1999 2004`
+
 (more info on this in the "Executing program" section below)
 
 This file is responsible for:
