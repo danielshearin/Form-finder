@@ -160,4 +160,8 @@ If you find that your requests are not returning the results you are anticipatin
 - Double-check your spelling and that you have typed the complete form name exactly as it is listed on the IRS site.
 - If you are unsure, you can visit https://apps.irs.gov/app/picklist/list/priorFormPublication.html and perform a search there to find the exact version of the form you wish to request.
 
-Thank you, hope you enjoy -- Daniel
+Thank you, hope you enjoy!
+
+## Feedback
+
+Thank you for having me along this far! I really enjoyed working on this challenge. It was a fun one. I liked its real-world context as well as how it utilized many different aspects of software development to solve a lot of little problems that worked toward a larger goal in the end. It was gratifying to see it through to the end. Thank you again!
