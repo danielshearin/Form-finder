@@ -89,7 +89,7 @@ This project uses three python files:
 `find_forms.py` is a module that will be run internally by either `return_json.py` or `download_forms.py`.
 It is responsible for:
 
-- Hitting the IRS webpage
+- Reaching the IRS webpage
 - Performing a search on the page
 - Requesting HTML
 - Retrieving the number of results
