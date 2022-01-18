@@ -4,7 +4,7 @@ Hello and thank you for reading. This is a Python program (written in version 3.
 
 First, with `return_json.py`, you, the user, can provide a list of IRS form names and receive a package of information about each form in the list. Specifically, you will receive the form number, the form title, and the minimum and maximum years that the form is available for download. This information will be returned to you printed in the console in JSON format.
 
-Second, with `download_forms.py`, you can specify a tax form and a range of years, and you will receive downloads for all the PDFs of that form available within that date range. These files will be downloaded into a subdirectory titled with the name of the form.
+Second, with `download_forms.py`, you can specify a tax form and a range of years, and you will receive downloads for all the PDFs of that form available within that date range (inclusive). These files will be downloaded into a subdirectory titled with the name of the form.
 
 ## Getting Started
 
