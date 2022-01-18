@@ -57,7 +57,7 @@ def download_forms(form_request: str, min_year: int, max_year: int):
     # Catch queries that have no results
     if count == 0:
         print(
-            f'\nNo forms called "{form_request}" were found in that date range.\nNo forms downloaded.\n\nIf you think this is incorrect:')
+            f'\nNo forms named "{form_request}" were found in that date range.\nNo forms downloaded.\n\nIf you think this is incorrect:')
         error_message_download_forms()
 
     # Print confirmation of downloads
