@@ -159,7 +159,7 @@ If you find that your requests are not returning the results you are anticipatin
 - If you are unsure if you have the right form name, you can visit https://apps.irs.gov/app/picklist/list/priorFormPublication.html and perform a search there to find the exact version and name of the form you wish to request.
 - You can also use that site to make sure that the years you are expecting to receive for a particular form are in fact included on the site. Not all years are always represented within a certain date range. For example, for the form "Publ 1," the years 1998 and 2000 exist, but 1999 does not.
 
-Thank you, hope you enjoy!
+Thank you, enjoy!
 
 ## Feedback
 
