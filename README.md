@@ -108,19 +108,14 @@ It is responsible for:
 
 ### `return_json.py`
 
-You can run `return_json.py` with a list of IRS form names and you will receive information about each form.
+You can run `return_json.py` with a list of IRS form names and you will receive information about each form printed as JSON to the console.
+(Find more info on input-formatting in the "How to Run the Files" section above)
 
-For example:
-
-`python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
-
-(more info on input-formatting in the "How to Run the Files" section above)
-
-This file is responsible for:
+`return_json.py` is responsible for:
 
 - Receiving user input via the command line
 - Handling errors resulting from bad user input
-- Calling and running "find_forms.py" to receive data based on user input.
+- Calling and running `find_forms.py` to receive data based on user input.
 - From that data, finding the minimum year and the maximum year for the requested form.
 - Alerting the user if no results were found.
   - In case the user believes they should have received results, this function also reminds them of the proper formatting for their input (to help with user error).
@@ -141,19 +136,14 @@ This file is responsible for:
 
 ### `download_forms.py`
 
-You can run `download_forms.py` with an IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
+You can run `download_forms.py` in the console with an IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range. These PDF files will be named with this format: "Form Name - Year" and will be downloaded to the directory of the corresponding form name.
+(Find more info on input-formatting in the "How to Run the Files" section above)
 
-For example:
-
-`python3 download_forms.py "Form W-2" 1999 2004`
-
-(more info on input-formatting in the "How to Run the Files" section above)
-
-This file is responsible for:
+`download_forms.py` is responsible for:
 
 - Receiving user input via the command line
 - Handling errors resulting from bad user input
-- Calling and running "find_forms.py" to receive data based on user input.
+- Calling and running `find_forms.py` to receive data based on user input.
 - Filtering results based on the requested minimum and maximum years.
 - Alerting the user if no results were found.
   - In case the user believes they should have received results, this function also reminds them of the proper formatting for their input (to help with user error).
@@ -168,8 +158,8 @@ This file is responsible for:
 If you find that your requests are not returning the results you are anticipating:
 
 - Double-check that your input formatting is as described above. Do not use any special characters such as "[]" or "{}" unless they are part of the form name.
-- Double-check your spelling and that you have typed the complete form name exactly as it is listed on the IRS site.
-- If you are unsure, you can visit https://apps.irs.gov/app/picklist/list/priorFormPublication.html and perform a search there to find the exact version of the form you wish to request.
+- Double-check your spelling and make sure that you have typed the complete form name exactly as it is listed on the IRS site. For instance "Form W-2" will work, while "W-2" will not.
+- If you are unsure, you can visit https://apps.irs.gov/app/picklist/list/priorFormPublication.html and perform a search there to find the exact version and name of the form you wish to request.
 
 Thank you, hope you enjoy!
 
