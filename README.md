@@ -59,7 +59,7 @@ For example:
 
 - Form names must be in quotations.
 - Both minimum year and maximum year need to be four-digit integers.
-- The form name and each year should each be separated by a space.
+- The form name and each year should be separated by a space.
 - Commas are optional.
 - Input is not case-sensitive.
 
