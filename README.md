@@ -36,7 +36,7 @@ Once you've got your virtual environment running in the `Find_the_Forms` directo
 ```
 python3 return_json.py "Form Name 1", "Form Name 2", "Form Name 3" ...
 
-or
+# or
 
 python3 download_forms.py "Form Name" minumum_year maximum_year
 ```
@@ -46,7 +46,7 @@ For example:
 ```
 python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"
 
-or
+# or
 
 python3 download_forms.py "Form W-2" 1999 2004
 ```
