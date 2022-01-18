@@ -22,7 +22,7 @@ Second, with `download_forms.py` you can specify a tax form and a range of years
 
 ### Installing
 
-Once you have the `Find_the_forms` package in your preferred directory, navigate to `Find_the_forms` in your terminal and run the following commands:
+Once you have the `Find_the_Forms` package in your preferred directory, navigate to `Find_the_Forms` in your terminal and run the following commands:
 
 ```
 pipenv install
@@ -31,7 +31,7 @@ pipenv shell
 
 ### How to Run the Files
 
-Once you've got your virtual environment running in the `Find_the_forms` directory, simply run either `return_json.py` or `download_forms.py` via the command line, along with your input, like this:
+Once you've got your virtual environment running in the `Find_the_Forms` directory, simply run either `return_json.py` or `download_forms.py` via the command line, along with your input, like this:
 
 ```
 python3 return_json.py <input>
