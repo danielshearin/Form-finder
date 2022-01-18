@@ -104,7 +104,7 @@ It is responsible for:
 - Performing a search on the page
 - Requesting HTML
 - Retrieving the number of results
-- Scraping search results (multiple pages when there is pagination involved)
+- Scraping search results (including multiple pages when there is pagination involved)
 - Parsing the search results
 - Returning a nested list of items. Each item will be a single version of every form requested (one item per year) and will have the following information:
   - form number (form name)
