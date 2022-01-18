@@ -7,9 +7,14 @@ import sys
 def error_message_download_forms():
     print('\nPlease re-run "download_forms.py" and enter your request in the follwing format: \n"Form Number" minumum_year maximum_year\n\nFor example:\n"Form W-2" 1999 2004\n\nOr for only one year, enter the same year as both minimum and maximum values.\nFor example:\n"Form W-2" 1999 1999\n\n** Do not forget to use quotations around the form number, and that both minimum year and maximum year need to be four-digit integers.\nThe three arguments should each be separated by a space.\nCommas are optional and input is not case-sensitive.')
 
-
-def click_link(form_number: str, download_name: str, r: Response):
-    with open(f'{form_number}/{download_name}.pdf', 'wb') as f:
+def click_link(form_name: str, download_name: str, r: Response):
+    """
+    Opens download link on website and downloads PDF to cooresponding folder.
+    
+    Parameters:
+        form_name (str): The 
+    """
+    with open(f'{form_name}/{download_name}.pdf', 'wb') as f:
         f.write(r.content)
 
 def download_forms(form_request: str, min_year: int, max_year: int):
@@ -19,7 +24,7 @@ def download_forms(form_request: str, min_year: int, max_year: int):
     
     # Filtering results and downloading forms
     for result in results:
-        form_number = (result["form_number"])
+        form_name = (result["form_name"])
         year = int(result["year"])
         download_url = result["download_url"]
         download_file_name = result["download_file_name"]
@@ -28,12 +33,12 @@ def download_forms(form_request: str, min_year: int, max_year: int):
         if year >= min_year and year <= max_year:
             count += 1
             r = requests.get(download_url, allow_redirects=True)
-            if not os.path.exists(form_number):
-                os.mkdir(form_number)
-                print(f"Directory {form_number} created.")
-                click_link(form_number, download_file_name, r)
+            if not os.path.exists(form_name):
+                os.mkdir(form_name)
+                print(f"Directory {form_name} created.")
+                click_link(form_name, download_file_name, r)
             else:
-                click_link(form_number, download_file_name, r)  
+                click_link(form_name, download_file_name, r)  
         
     # Catch queries that have no results
     if count == 0:
@@ -42,7 +47,7 @@ def download_forms(form_request: str, min_year: int, max_year: int):
         
     #Print confirmation of downloads
     else:
-        print(f'{count} forms downloaded to "{form_number}" directory.')
+        print(f'{count} forms downloaded to "{form_name}" directory.')
 
 
 if __name__ == '__main__':

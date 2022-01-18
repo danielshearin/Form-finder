@@ -21,10 +21,10 @@ def return_json(form_list: List[str]):
 
         # Populating list of years
         for result in results:
-            form_number = result["form_number"]
+            form_name = result["form_name"]
             form_title = result["form_title"]
             year = result["year"]
-            if form_request.lower() == form_number.lower():
+            if form_request.lower() == form_name.lower():
                 years.append(year)
 
         # Catch queries that have no results
@@ -36,7 +36,7 @@ def return_json(form_list: List[str]):
             min_year = min(years)
             max_year = max(years)
             json_results.append({
-                "form_number": form_number,
+                "form_name": form_name,
                 "form_title": form_title,
                 "min_year": min_year,
                 "max_year": max_year

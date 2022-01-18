@@ -44,14 +44,14 @@ class FindForms:
 
                 # Parse search results
                 for line in lines:
-                    form_number = line.find('td', class_="LeftCellSpacer").text.strip()
-                    if self.form_request.lower() == form_number.lower():
+                    form_name = line.find('td', class_="LeftCellSpacer").text.strip()
+                    if self.form_request.lower() == form_name.lower():
                         download_url = line.find('a').attrs['href']
                         form_title = line.find('td', class_="MiddleCellSpacer").text.strip()
                         year = line.find('td', class_="EndCellSpacer").text.strip()
-                        download_file_name = form_number + ' - ' + year
+                        download_file_name = form_name + ' - ' + year
                         results.append({
-                            "form_number": form_number,
+                            "form_name": form_name,
                             "form_title": form_title,
                             "year": year,
                             "download_url": download_url,
