@@ -1,4 +1,4 @@
-# Find the forms!
+# Find the Forms!
 
 Hello and thank you for reading. This is a Python program (written in version 3.9.5, requires 3.9) that fulfills two main purposes.
 
