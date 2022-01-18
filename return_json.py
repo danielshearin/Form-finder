@@ -37,7 +37,7 @@ def return_json(form_list: List[str]):
             min_year = min(years)
             max_year = max(years)
             json_results.append({
-                "form_name": form_name,
+                "form_number": form_name,
                 "form_title": form_title,
                 "min_year": min_year,
                 "max_year": max_year

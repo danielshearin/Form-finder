@@ -1,6 +1,6 @@
 # Find the forms!
 
-Hello and thank you for reading. This is a Python program (written in version 3.9.5) that fulfills two main purposes.
+Hello and thank you for reading. This is a Python program (written in version 3.9.5, requires 3.9) that fulfills two main purposes.
 
 First, with `return_json.py`, you, the user, can provide a list of IRS form names and receive a package information about each form in the list. Specifically, you will receive the form number (aka form name), the form title, and the minimum and maximum years that the form is available for download. This information will be returned to you formatted in json.
 
@@ -38,6 +38,7 @@ You can run `return_json.py` with a list of IRS form names and you will receive 
 
 For example:
 `python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
+(more info on this in the "Executing program" section below)
 
 This file is responsible for:
 
@@ -48,7 +49,7 @@ This file is responsible for:
 - Alerting the user if no results were found.
   - In case the user believes they should have received results, this function also reminds them of the proper formatting for their input (to help with user error).
 - Formatting each successful data set into json and adding that to a final list of results.
-- Printing the results to the console in the following format:
+- Printing the results as JSON to the console in the following format:
 
 ```
 [
@@ -68,6 +69,7 @@ You can run `download_forms.py` with an IRS form name, a maximum year and a mini
 
 For example:
 `python3 download_forms.py "Form W-2" 1999 2004`
+(more info on this in the "Executing program" section below)
 
 This file is responsible for:
 
@@ -105,7 +107,7 @@ pipenv install
 pipenv shell
 ```
 
-### Executing program
+### Executing program -- how to run files
 
 Once you've got your virtual environment running in the `Find_the_forms` directory, to use the program you will simply run either `return_json.py` or `download_forms.py` via the command line, along with your input, like this:
 

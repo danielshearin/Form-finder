@@ -78,7 +78,7 @@ class FindForms:
                         results.append({
                             "form_name": form_name,
                             "form_title": form_title,
-                            "year": year,
+                            "year": int(year),
                             "download_url": download_url,
                             "download_file_name": download_file_name
                         })
