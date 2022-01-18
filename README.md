@@ -126,7 +126,7 @@ You can run `return_json.py` with a list of requested IRS form names, and for ea
 - From that data, finding the minimum year and the maximum year for the requested form.
 - Alerting the user if no results were found.
   - To help with user error, this message also reminds them of the proper formatting for their input and provides a link to the IRS website for reference.
-- Formatting each successful data set into json and adding that to a final list of results.
+- Formatting each successful data set into JSON and adding that to a final list of results.
 - Printing the results as JSON to the console in the following format:
 
 ```
