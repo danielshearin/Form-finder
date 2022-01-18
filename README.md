@@ -34,24 +34,24 @@ pipenv shell
 Once you've got your virtual environment running in the `Find_the_Forms` directory, simply run either `return_json.py` or `download_forms.py` via the command line, along with your input, like this:
 
 ```
-python3 return_json.py "Form Number 1", "Form Number 2", "Form Number 3" ...
+python3 return_json.py "Form Name 1", "Form Name 2", "Form Name 3" ...
 
 or
 
-python3 download_forms.py "Form Number" minumum_year maximum_year
+python3 download_forms.py "Form Name" minumum_year maximum_year
 ```
 
 #### More on input formatting for `return_json.py`:
 
-- Form numbers must be in quotations and separated by a space.
+- Form names must be in quotations and separated by a space.
 - Commas are optional.
 - Input is not case-sensitive.
 
-`"Form Number 1", "Form Number 2", "Form Number 3" ...`
+`"Form Name 1", "Form Name 2", "Form Name 3" ...`
 
 or without commas:
 
-`"Form Number 1" "Form Number 2" "Form Number 3" ...`
+`"Form Name 1" "Form Name 2" "Form Name 3" ...`
 
 For example:
 
@@ -65,7 +65,7 @@ For example:
 - Commas are optional.
 - Input is not case-sensitive.
 
-`"Form Number" minumum_year maximum_year`
+`"Form Name" minumum_year maximum_year`
 
 For example:
 

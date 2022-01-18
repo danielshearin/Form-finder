@@ -7,7 +7,7 @@ import sys
 def error_message_json():
     """ Prints error message for return_json.py """
 
-    print('\nPlease re-run "return_json.py" and enter your request in one of the follwing formats:\n\n"Form Number 1", "Form Number 2", "Form Number 3" ...\nor\n"Form Number 1" "Form Number 2" "Form Number 3" ...\n\nFor example:\n"Form W-2", "Publ 1", "Form 990 (Schedule K)"\n\n** Do not forget form numbers should be in quotations and separated by a space.\nCommas are optional and input is not case-sensitive.\n\nStill not getting what you expect? You can search here to make sure you are using the form name exactly as it is listed on the site:\nhttps://apps.irs.gov/app/picklist/list/priorFormPublication.html')
+    print('\nPlease re-run "return_json.py" and enter your request in one of the follwing formats:\n\n"Form Name 1", "Form Name 2", "Form Name 3" ...\nor\n"Form Name 1" "Form Name 2" "Form Name 3" ...\n\nFor example:\n"Form W-2", "Publ 1", "Form 990 (Schedule K)"\n\n** Do not forget form names should be in quotations and separated by a space.\nCommas are optional and input is not case-sensitive.\n\nStill not getting what you expect? You can search here to make sure you are using the form name exactly as it is listed on the site:\nhttps://apps.irs.gov/app/picklist/list/priorFormPublication.html')
 
 
 def return_json(form_list: List[str]):
