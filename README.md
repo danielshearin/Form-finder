@@ -58,9 +58,11 @@ python3 download_forms.py "Form W-2" 1999 2004
 - Input is not case-sensitive.
 
 Format like this:
+
 `"Form Name 1", "Form Name 2", "Form Name 3" ...`
 
 For example:
+
 `python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
 
 #### More on input formatting for `download_forms.py`:
@@ -73,13 +75,16 @@ For example:
 - Input is not case-sensitive.
 
 Format like this:
+
 `"Form Name" minumum_year maximum_year`
 
 For example:
+
 `python3 download_forms.py "Form W-2" 1999 2004`
 
 If you would only like to download one year, enter that year as both the minimum and maximum values.
 For example:
+
 `python3 download_forms.py "Form W-2" 1999 1999`
 
 ## More Details
