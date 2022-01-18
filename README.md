@@ -121,10 +121,12 @@ Your input should be in the following formats.
 
 `"Form Number 1", "Form Number 2", "Form Number 3" ...`
 
-or without commas
+or without commas:
+
 `"Form Number 1" "Form Number 2" "Form Number 3" ...`
 
 For example:
+
 `python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
 
 - Form numbers must be in quotations and separated by a space.
@@ -136,10 +138,12 @@ For example:
 `"Form Number" minumum_year maximum_year`
 
 For example:
+
 `python3 download_forms.py "Form W-2" 1999 2004`
 
 If you would only like to download one year, enter that year as both minimum and maximum values.
 For example:
+
 `python3 download_forms.py "Form W-2" 1999 1999`
 
 - Form numbers must be in quotations.
