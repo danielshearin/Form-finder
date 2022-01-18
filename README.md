@@ -13,6 +13,8 @@ This project is built with Python 3.9.5 and uses three python modules:
 * download_forms.py
 * find_forms.py
 
+
+### `find_forms.py`
 `find_forms.py` will be run by either `return_json.py` or `download_forms.py`. 
 This file is responsible for:
 * Getting the IRS wepbage
@@ -29,7 +31,7 @@ This file is responsible for:
         * download url
         * name to be used for downloaded file 
             
-            
+### `return_json.py`
 You, the user, can run `return_json.py` with a list of IRS form names and you will receive information about each form.
 
 This file is responsible for:
@@ -52,7 +54,7 @@ This file is responsible for:
             ... 
         ]
 
-
+### `download_forms.py`
 You, the user, can run `download_forms.py` with a IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
 
 This file is responsible for:
