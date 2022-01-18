@@ -118,6 +118,9 @@ python3 download_forms.py <input>
 Your input should be in the following formats.
 
 #### Input format for `return_json.py`:
+- Form numbers must be in quotations and separated by a space.
+- Commas are optional.
+- Input is not case-sensitive.
 
 `"Form Number 1", "Form Number 2", "Form Number 3" ...`
 
@@ -129,11 +132,13 @@ For example:
 
 `python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
 
-- Form numbers must be in quotations and separated by a space.
-- Commas are optional.
-- Input is not case-sensitive.
 
 #### Input format for `download_forms.py`:
+- Form numbers must be in quotations.
+- Both minimum year and maximum year need to be four-digit integers.
+- The form name and the two years should each be separated by a space.
+- Commas are optional.
+- Input is not case-sensitive.
 
 `"Form Number" minumum_year maximum_year`
 
@@ -146,11 +151,6 @@ For example:
 
 `python3 download_forms.py "Form W-2" 1999 1999`
 
-- Form numbers must be in quotations.
-- Both minimum year and maximum year need to be four-digit integers.
-- The form name and the two years should each be separated by a space.
-- Commas are optional.
-- Input is not case-sensitive.
 
 ## Help
 
