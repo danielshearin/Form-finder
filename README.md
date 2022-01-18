@@ -163,4 +163,4 @@ Thank you, enjoy!
 
 ## Feedback
 
-Thank you for having me along this far! I really enjoyed working on this challenge. It was a fun one. I liked its real-world context as well as how it utilized many different aspects of software development to solve a lot of little problems that worked toward a larger goal in the end. It was gratifying to see it through to the end. Thank you again!
+Thank you for having me along this far! I really enjoyed working on this challenge. It was a fun one. I liked its real-world context as well as how it utilized many different aspects of software development to solve a lot of smaller problems that worked toward a larger goal in the end. It was gratifying to see it through to the end. Thank you again!
