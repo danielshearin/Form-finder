@@ -42,15 +42,15 @@ This file is responsible for:
 * Formatting each successful data set to json and adding that to a final list of results.
 * Printing the results to the console in the following format:
     
-            [
-                    {
-                        "form_number": "Form Number",
-                        "form_title": "Form Title",
-                        "min_year": ####,
-                        "max_year": ####
-                    },
-                    ... 
-            ]
+    [
+        {
+            "form_number": "Form Number",
+            "form_title": "Form Title",
+            "min_year": ####,
+            "max_year": ####
+        },
+        ... 
+    ]
 
 
 You, the user, can run `download_forms.py` with a IRS form name, a maximum year and a minimum year and receive downloads for all PDFs of that name within that date range.
