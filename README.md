@@ -1,6 +1,6 @@
 # Find the forms!
 
-Hello and thank you for reading. This is a Python program (written in version 3.9.5) that achieves two main purposes.
+Hello and thank you for reading. This is a Python program (written in version 3.9.5) that fulfills two main purposes.
 
 First, with `return_json.py`, you, the user, can provide a list of IRS form names and receive a package information about each form in the list. Specifically, you will receive the form number (aka form name), the form title, and the minimum and maximum years that the form is available for download. This information will be returned to you formatted in json.
 
@@ -118,6 +118,7 @@ python3 download_forms.py <input>
 Your input should be in the following formats.
 
 #### Input format for `return_json.py`:
+
 - Form numbers must be in quotations and separated by a space.
 - Commas are optional.
 - Input is not case-sensitive.
@@ -132,11 +133,11 @@ For example:
 
 `python3 return_json.py "Form W-2", "Publ 1", "Form 990 (Schedule K)"`
 
-
 #### Input format for `download_forms.py`:
+
 - Form numbers must be in quotations.
 - Both minimum year and maximum year need to be four-digit integers.
-- The form name and the two years should each be separated by a space.
+- The form name and each year should each be separated by a space.
 - Commas are optional.
 - Input is not case-sensitive.
 
@@ -151,13 +152,12 @@ For example:
 
 `python3 download_forms.py "Form W-2" 1999 1999`
 
-
 ## Help
 
 If you find that your requests are not returning the results you are anticipating:
 
-- Double-check that your input formatting is as described above.
-- Double-check your spelling and that you have the complete form name exactly as it is listed on the IRS site.
+- Double-check that your input formatting is as described above. Do not use any special characters such as "[]" or "{}" unless they are part of the form name.
+- Double-check your spelling and that you have typed the complete form name exactly as it is listed on the IRS site.
 - If you are unsure, you can visit https://apps.irs.gov/app/picklist/list/priorFormPublication.html and perform a search there to find the exact version of the form you wish to request.
 
 Thank you, hope you enjoy -- Daniel
