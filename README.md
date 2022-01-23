@@ -1,4 +1,4 @@
-# Find the Forms!
+# Form Finder
 
 Hello and thank you for reading! This is a Python program (written in version 3.9.5) that fulfills two main purposes.
 
