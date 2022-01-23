@@ -169,7 +169,3 @@ If you find that your requests are not returning the results you are anticipatin
 - You can also use that site to make sure that the years you are expecting to receive for a particular form are in fact included on the site. Not all years are always represented within a certain date range. For example, for the form "Publ 1," the years 1998 and 2000 exist, but 1999 does not.
 
 Thank you, enjoy!
-
-## Feedback
-
-Thank you for having me along this far! I really enjoyed working on this challenge. It was a fun one. I liked its real-world context as well as how it utilized many different aspects of software development to solve a lot of smaller problems that worked toward a larger goal in the end. It was gratifying to see it through to the end. Thank you again!
